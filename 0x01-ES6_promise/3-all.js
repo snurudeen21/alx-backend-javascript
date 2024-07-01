@@ -1,4 +1,4 @@
-async function handleProfileSignupAsync() {
+async function handleProfileSignup() {
   try {
     const [uploadPhotoResult, createUserResult] = await Promise.all([uploadPhoto(), createUser()]);
     console.log(uploadPhotoResult.body, createUserResult.firstName, createUserResult.lastName);
