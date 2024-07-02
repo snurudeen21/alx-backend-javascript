@@ -1,18 +1,18 @@
-export default class Building {
+class Building {
   constructor(sqft) {
-    // if (new.target === Building) {
-    // throw new Error('Can"t instantiate class Building');
-    //    }
+    if (new.target === Building) {
+      throw new Error("Building is an abstract class and cannot be instantiated directly.");
+    }
     this._sqft = sqft;
   }
 
+  // Getter for sqft attribute
   get sqft() {
     return this._sqft;
   }
 
-  /* eslint-disable class-methods-use-this */
-  abstract evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+  // Abstract method to be implemented by subclasses
+  evacuationWarningMessage() {
+    throw new Error("Class extending Building must override evacuationWarningMessage");
   }
-  /* eslint-enable class-methods-use-this */
 }
