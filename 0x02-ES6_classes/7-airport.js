@@ -1,17 +1,18 @@
 export default class Airport {
   constructor(name, code) {
-    // Create objs
-    this._code = code;
     this._name = name;
+    this._code = code;
   }
 
-  // Methods
-
-  get [Symbol.toStringTag]() {
-    return `${this._code}`;
+  get name() {
+    return this._name;
   }
 
-  // Setters
+  get code() {
+    return this._code;
+  }
 
-  // Getters
+  toString() {
+    return this._code;
+  }
 }
